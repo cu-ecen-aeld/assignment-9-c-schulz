@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case "$1" in
+    start)
+        echo "Start ldd modules"
+        scull_load          || { echo "scull_load failed";         exit 1; }
+        module_load faulty  || { echo "module_load faulty failed"; exit 1; }
+        modprobe hello      || { echo "modprobe hello failed";     exit 1; }
+        ;;
+    stop)
+        echo "Stop ldd modules"
+        scull_unload
+        module_unload faulty
+        rmmod hello
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0
