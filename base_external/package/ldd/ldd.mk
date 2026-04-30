@@ -12,11 +12,7 @@ LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES
 
 # assignment 7) build the misc-modules and scull components
-LDD3_MODULE_SUBDIRS = misc-modules scull
-# define LDD_BUILD_CMDS
-#  	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/misc-modules all
-#  	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/scull all
-# endef
+LDD_MODULE_SUBDIRS = misc-modules scull
 
 # assignment 7) install the misc-modules and scull components into the root filesystem
 define LDD_INSTALL_TARGET_CMDS
