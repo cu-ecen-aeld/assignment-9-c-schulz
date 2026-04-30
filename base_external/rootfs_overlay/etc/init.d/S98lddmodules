@@ -1,8 +1,14 @@
 #!/bin/sh
 
+# scull.ko is located at /lib/modules/6.1.44/extra/scull.ko
+# 'insmod' from 'scull_load' searches in local folder (pwd) for 'scull.ko'
+# -> cd to /lib/modules/$(uname -r)/extra first
+MODULE_DIR="/lib/modules/$(uname -r)/extra"
+
 case "$1" in
     start)
         echo "Start ldd modules"
+        cd $MODULE_DIR      || { echo "cd to $MODULE_DIR failed";  exit 1; }
         scull_load          || { echo "scull_load failed";         exit 1; }
         module_load faulty  || { echo "module_load faulty failed"; exit 1; }
         modprobe hello      || { echo "modprobe hello failed";     exit 1; }
