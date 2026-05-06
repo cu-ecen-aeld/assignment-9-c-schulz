@@ -14,6 +14,7 @@ AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
 # assignment 8) build the aesd-char-driver components for the kernel module
 AESD_ASSIGNMENTS_MODULE_SUBDIRS = aesd-char-driver
 
+# assignment 4) & 5) build aesdsocket and finder-app
 define AESD_ASSIGNMENTS_BUILD_CMDS
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app all
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/server all
