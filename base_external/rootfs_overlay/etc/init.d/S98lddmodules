@@ -11,14 +11,12 @@ case "$1" in
         cd $MODULE_DIR      || { echo "cd to $MODULE_DIR failed";  exit 1; }
         scull_load          || { echo "scull_load failed";         exit 1; }
         module_load faulty  || { echo "module_load faulty failed"; exit 1; }
-        aesdchar_load       || { echo "aesdchar_load failed";      exit 1; }
         modprobe hello      || { echo "modprobe hello failed";     exit 1; }
         ;;
     stop)
         echo "Stop ldd modules"
         scull_unload
         module_unload faulty
-        aesdchar_unload
         rmmod hello
         ;;
     *)

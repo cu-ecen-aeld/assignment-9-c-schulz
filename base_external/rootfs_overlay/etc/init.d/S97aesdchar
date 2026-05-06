@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# aesdchar.ko is located at /lib/modules/6.1.44/extra/aesdchar.ko
+# 'insmod' from 'aesdchar_load' searches in local folder (pwd) for 'aesdchar.ko'
+# -> cd to /lib/modules/$(uname -r)/extra first
+MODULE_DIR="/lib/modules/$(uname -r)/extra"
+
+case "$1" in
+    start)
+        echo "Start aesdchar module"
+        aesdchar_load
+        ;;
+    stop)
+        echo "Stop aesdchar module"
+        aesdchar_unload
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0
