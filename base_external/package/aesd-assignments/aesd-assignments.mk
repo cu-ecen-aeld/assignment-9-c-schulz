@@ -6,7 +6,7 @@
 ##############################################################
 
 # assignment 4) & 5) & 8) reference your assignment 3 git contents
-AESD_ASSIGNMENTS_VERSION = '0b694ed2c14dddab807b9d334cbe9beab29a7c29'
+AESD_ASSIGNMENTS_VERSION = 'c04c68532b7d71b266ea725051f3bfec5c4486e3'
 AESD_ASSIGNMENTS_SITE = 'git@github.com:cu-ecen-aeld/assignments-3-and-later-c-schulz.git'
 AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
